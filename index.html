@@ -18,38 +18,46 @@
         <div class="container-fluid">
         <!--Weather icon/degrees/location-->
         <div id = "weather-block">
-            <div class = "row">
-                <div class = "col-md-10" "col-sm-3" "col-xs-6"><!-- spacing inside --></div>
-                <div class = "col-md-2" "col-sm-3" "col-xs-6">
-                    <p id = "weather-data">98.6 &#x2109</p>
-                    <p id = "location-data">Nowhere, WI</p>
+            <div class = "row align-items-end">
+                <div class = "col-md-10 col-sm-3 col-xs-6"><!-- spacing inside --></div>
+                <div class = "col-md-2 col-sm-3 col-xs-6">
+                    <div class= "text-right" id = "weather-data">98.6 &#x2109</div>
+                    <div class= "text-right"id = "location-data">Nowhere, WI</div>
                 </div>
             </div>  
         </div>
         <!--Current Time-->
-        <div id = "time-block">
-            25:00
+        <div class = "row">
+            <div class = "text-center" id = "time-block">
+                25:00
+            </div>
         </div>
 
+
         <!--Greeting-->
-        <p id ="greeting-block">
-             "Hello there, my bromide.  Do you know the times?"
-        </p>
+        <div class = "row">
+                <p class = "text-center" id ="greeting-block">
+                    "Hello there, my bromide.  Do you know the times?"
+                </p>
+        </div>
 
         <!--Input to ask what you want to work on for the todo list, maybe in a form-->
-        <div class = "form-group">
-            <input class = "form-control" name = "todo-input" placeholder = "What are you doing?  Why are you doing it?" />
+        <div class = "row">
+            <div class = "form-group">
+                <input class = "form-control text-center" name = "todo-input" placeholder = "What are you doing?  Why are you doing it?" />
+            </div>
         </div>
 
         <!--Quote, image source, maybe something on the right too?-->
+        <!--consider align-self-start, center, and end for these instead?-->
         <div class = "row">
-            <div class = "col-md-2" "col-sm-3" "col-xs-6" id = "image-source">
+            <div class = "col-md-2 col-sm-3 col-xs-6 text-left" id = "image-source">
                 Image source here
             </div>
-            <div class = "col-md-8" "col-sm-6" "col-xs-6" id = "quote-block">
+            <div class = "col-md-8 col-sm-6 col-xs-6 text-center" id = "quote-block">
                 If you can see Chuck Norris, Chuck Norris can see you.  If you can't see Chuck Norris, you are seconds from death.
             </div>
-            <div class = "col-md-2" "col-sm-3" "col-xs-6" id = "extra-block">
+            <div class = "col-md-2 col-sm-3 col-xs-6 text-right" id = "extra-block">
                 More?
             </div>
         </div>
