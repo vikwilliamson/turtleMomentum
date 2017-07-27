@@ -17,14 +17,43 @@
     <body>
         <div class="container-fluid">
         <!--Weather icon/degrees/location-->
-
+        <div id = "weather-block">
+            <div class = "row">
+                <div class = "col-md-10" "col-sm-3" "col-xs-6"><!-- spacing inside --></div>
+                <div class = "col-md-2" "col-sm-3" "col-xs-6">
+                    <p id = "weather-data">98.6 &#x2109</p>
+                    <p id = "location-data">Nowhere, WI</p>
+                </div>
+            </div>  
+        </div>
         <!--Current Time-->
+        <div id = "time-block">
+            25:00
+        </div>
 
         <!--Greeting-->
+        <p id ="greeting-block">
+             "Hello there, my bromide.  Do you know the times?"
+        </p>
 
-        <!--Input to ask what you want to work on, maybe in a form-->
+        <!--Input to ask what you want to work on for the todo list, maybe in a form-->
+        <div class = "form-group">
+            <input class = "form-control" name = "todo-input" placeholder = "What are you doing?  Why are you doing it?" />
+        </div>
 
-        <!--Quote-->
+        <!--Quote, image source, maybe something on the right too?-->
+        <div class = "row">
+            <div class = "col-md-2" "col-sm-3" "col-xs-6" id = "image-source">
+                Image source here
+            </div>
+            <div class = "col-md-8" "col-sm-6" "col-xs-6" id = "quote-block">
+                If you can see Chuck Norris, Chuck Norris can see you.  If you can't see Chuck Norris, you are seconds from death.
+            </div>
+            <div class = "col-md-2" "col-sm-3" "col-xs-6" id = "extra-block">
+                More?
+            </div>
+        </div>
+            
     </body>
 
     <!--load custom scripts-->
