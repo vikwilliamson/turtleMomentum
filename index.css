@@ -1,4 +1,45 @@
 body{
-    background-color:black;
+    /*background-color:black;*/
     color: white;
+    background-image: url("https://source.unsplash.com/random");
+    min-height:100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
 }
+
+/* consider adding something like this for image size, if bootstrap starts acting funky 
+@media (max-width: 300px) {
+  body {
+    background-color: #333333;
+    background-image: image-url("http://placekitten.com/g/200/300");
+  }
+}
+@media (min-width: 301px) and (max-width: 600px) {
+  body {
+    background-color: #666666;
+    background-image: image-url("http://placekitten.com/g/400/600");
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  body {
+    background-color: #999999;
+    background-image: image-url("http://placekitten.com/g/500/768");
+  }
+}
+@media (min-width: 769px) {
+  body {
+    background-color: #cccccc;
+    background-image: image-url("http://placekitten.com/g/800/1048");
+  }
+}
+
+Can also change background with:
+document.getElementById("myDiv").style.backgroundImage = "url('img_tree.png')";
+there's probably some jquery method to do this too...
+
+Can maybe style using jquery, and
+$(window).height();   // returns height of browser viewport
+$(window).width();   // returns width of browser viewport
+*/
