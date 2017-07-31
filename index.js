@@ -1,6 +1,6 @@
 $(document).ready(function() {
     clockInterval = setInterval(updateTime, 1000);
-    messageInterval = setInterval(updateMessage, 10000);
+    messageInterval = setInterval(updateMessage, 20000);
 })
 
 
@@ -33,12 +33,14 @@ function updateMessage(){
     $("#quote-block").animate({opacity: '0'});
     //to replace the current message, get the JSON from the quote API
     var quoteURL = "http://api.icndb.com/jokes/random?firstName=CHUCK&lastName=NORRIS";
-    $.getJSON(quoteURL).done(function(data){
+    //make sure the message doesn't appear until the fadeout is complete
+    setTimeout(function(){
+        $.getJSON(quoteURL).done(function(data){
         //extract the value
         console.log(data.value.joke);
         var joke = data.value.joke;
         //put it into the div
-        setTimeout(function(){$("#quote-block").text(joke);}, 250);
+        $("#quote-block").text(joke);
         //fade the div back in
         $("#quote-block").animate({opacity: "1.0"});
         //if the API call fails, at least say something
@@ -46,4 +48,5 @@ function updateMessage(){
         console.log("Joke API failed to retrieve a joke.  For shame!");
         $("#quote-block").text = "Chuck Norris broke our API with nothing but a stern look. Death tolls are in the thousands.";
     })
+    }, 1000);
 }
