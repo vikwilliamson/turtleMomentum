@@ -51,17 +51,16 @@ function updateTime(){
 // function that cycles the greeting message, run each 10 seconds
 function updateGreeting(){
     
-     $("#greeting-block").animate({opacity: '0'}); //fade out the greeting-block
-    setTimeout(function(){ //make sure nothing displays until the animation is complete by setting timeout
-    if (timeToDisplayGreeting){  //if the boolean says to display the greeting...
+     $("#greeting-block").animate({opacity: '0'});   //fade out the greeting-block
+    setTimeout(function(){                           //make sure nothing displays until the animation is complete by setting timeout
+    if (timeToDisplayGreeting){                     //if the boolean says to display the greeting...
 
-        //generate a random number between 0 and the greeting array length
+                                                    //select a random member of the greeting array, place into the greeting descriptor
         var i = Math.floor(Math.random() * greetingArray.length);
-        //select a random member of the greeting array, place into the greeting descriptor
         $("#time-descriptor").text(timeDescriptor);
         $("#greeting-descriptor").text(greetingArray[i]);
-    } else {  //if the boolean says not to display the greeting...
-        //select a member of the todo array, and display it.
+    } else {                                         //if the boolean says not to display the greeting...
+                                                    //select a member of the todo array, and display it.
         var i = Math.floor(Math.random() * todoArray.length)
         $("#time-descriptor").text("TODO: ");
         $("#greeting-descriptor").text(todoArray[i]);
@@ -75,17 +74,13 @@ function updateGreeting(){
 
 // function that takes the text input and adds it to the greeting message
 // this will trigger on enter key up, set by an event listener.
-function addTodo(){
-    //get the value in the input block, clear the input, and push the input you got into the todo array.
+function addTodo(){                                 //get the value in the input block, clear the input, and push the input you got into the todo array.
     $("#greeting-block").animate({opacity: '0'});
-    //remember to put something in if the user forgets to type something but presses enter anyway
+                                                    //remember to put something in if the user forgets to type something but presses enter anyway
     var input = ($("#todo-input").val() !== "") ? $("#todo-input").val() : "Start remembering to type something before submitting!";
     $("#todo-input").val("");
     todoArray.push(input);
-    console.log("todo added to array...");
-    console.log(todoArray);
-    //display the todo that was just entered
-    setTimeout(function(){
+    setTimeout(function(){                          //display the todo that was just entered
         $("#time-descriptor").text("TODO: ");
         $("#greeting-descriptor").text(todoArray[todoArray.length-1]);
         timeToDisplayGreeting = true;
@@ -97,14 +92,10 @@ function addTodo(){
 
 // function that calls the quote api and print the message, run each minute
 function updateMessage(){
-    //fade out the current message
-    $("#quote-block").animate({opacity: '0'});
-    //to replace the current message, get the JSON from the quote API
-    var quoteURL = "http://api.icndb.com/jokes/random?firstName=CHUCK&lastName=NORRIS";
-    //make sure the message doesn't appear until the fadeout is complete
-    setTimeout(function(){
-        $.getJSON(quoteURL).done(function(data){
-        //extract the value
+    $("#quote-block").animate({opacity: '0'});                                               //fade out the current message
+    var quoteURL = "http://api.icndb.com/jokes/random?firstName=CHUCK&lastName=NORRIS";     //get the JSON from the quote API
+    setTimeout(function(){                                                                  //make sure the message doesn't appear until the fadeout is complete
+        $.getJSON(quoteURL).done(function(data){                                            //extract the value
         console.log(data.value.joke);
         var joke = data.value.joke;
         joke = joke.replace(/&quot;/g, "\'");  //replace those silly &quot; things
